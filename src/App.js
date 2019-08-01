@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useReducer } from "react";
+
+import UI from "./components/UI/";
+import Array from "./components/Array/";
+import { initialState, reducer } from "reducer/";
 
 function App() {
-  return <div className="App">Hello World!</div>;
+  const [state, dispatch] = useReducer(reducer, initialState);
+  return (
+    <>
+      <UI state={state} dispatch={dispatch} />
+      <Array state={state} />
+    </>
+  );
 }
 
 export default App;
