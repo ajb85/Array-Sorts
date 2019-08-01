@@ -8,7 +8,9 @@ const startArray = [
 
 export const initialState = {
   array: startArray,
-  length: 4
+  length: 4,
+  steps: [],
+  step: 0
 };
 
 export const reducer = (state, action) => {
@@ -21,6 +23,14 @@ export const reducer = (state, action) => {
         array: randomizeArray(action.payload),
         length: action.payload
       };
+    case "incrementStep":
+      return { ...state, step: ++state.step };
+    case "decrementStep":
+      return { ...state, step: --state.step };
+    case "setStep":
+      return { ...state, step: action.payload };
+    case "setSteps":
+      return { ...state, steps: action.payload };
     default:
       return state;
   }
