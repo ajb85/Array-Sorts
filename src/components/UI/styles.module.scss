@@ -2,10 +2,8 @@
 
 section.UI {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin: $lh / 2;
-
+  flex-direction: column;
+  align-items: center;
   div {
     display: flex;
     align-items: center;
@@ -22,17 +20,20 @@ section.UI {
       font-size: 2rem;
       line-height: $lh;
     }
+  }
 
+  div.settings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    width: 100%;
+    margin: $lh / 2;
+  }
+
+  div.controls {
     svg {
-      border: 2px solid black;
-      border-radius: 50%;
-      padding: 8px;
-      cursor: pointer;
-      box-sizing: content-box;
-
-      &:active {
-        transform: translateY(1px);
-      }
+      margin: 0 5px;
     }
   }
 }
