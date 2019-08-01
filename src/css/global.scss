@@ -1,0 +1,20 @@
+@import "css/variables.scss";
+@import "css/reset.scss";
+
+* {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+label,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+span {
+  font-family: $font;
+  font-size: 62.5%;
+  line-height: $lh;
+}
