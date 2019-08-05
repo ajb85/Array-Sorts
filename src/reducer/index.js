@@ -10,7 +10,8 @@ export const initialState = {
   array: startArray,
   length: 4,
   steps: [],
-  step: 0
+  step: 0,
+  play: false
 };
 
 export const reducer = (state, action) => {
@@ -24,13 +25,22 @@ export const reducer = (state, action) => {
         length: action.payload
       };
     case "incrementStep":
-      return { ...state, step: ++state.step };
+      return {
+        ...state,
+        step: state.step < state.steps.length - 1 ? state.step + 1 : state.step
+      };
     case "decrementStep":
-      return { ...state, step: --state.step };
+      return {
+        ...state,
+        step: state.step > 0 ? state.step - 1 : state.step
+      };
     case "setStep":
       return { ...state, step: action.payload };
     case "setSteps":
       return { ...state, steps: action.payload };
+    case "togglePlay":
+      const step = state.step === 0 ? 1 : state.step;
+      return { ...state, play: !state.play, step };
     default:
       return state;
   }
