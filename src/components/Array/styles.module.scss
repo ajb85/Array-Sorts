@@ -9,9 +9,11 @@
 .displayArray {
   display: flex;
   width: fit-content;
+  justify-content: space-between;
+  position: relative;
+
   p {
     font-size: 2rem;
-    // padding: 0 5px;
   }
 }
 
@@ -20,4 +22,10 @@
     font-size: 1.3rem;
     margin: $lh 0 0;
   }
+}
+
+.numberBlock {
+  display: flex;
+
+  position: absolute;
 }
