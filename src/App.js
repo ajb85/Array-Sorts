@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <UI state={state} dispatch={dispatch} />
-      <Array state={state} />
+      <Array state={state} dispatch={dispatch} />
     </>
   );
 }
