@@ -46,16 +46,15 @@ function UI({ state, dispatch }) {
       </div>
 
       <div className={styles.controls}>
-        <FontAwesomeIcon
-          // onClick={()=>dispatch({type:"play"})}
-          icon="play"
-        />
-        <FontAwesomeIcon
-          // onClick={()=>dispatch({type:"pause"})}
-          icon="pause"
-        />
-        <FontAwesomeIcon onClick={() => nextStep(-1)} icon="step-backward" />
-        <FontAwesomeIcon onClick={() => nextStep(1)} icon="step-forward" />
+        <button onClick={() => dispatch({ type: "togglePlay" })}>
+          <FontAwesomeIcon icon={state.play ? "pause" : "play"} />
+        </button>
+        <button onClick={() => nextStep(-1)}>
+          <FontAwesomeIcon icon="step-backward" />
+        </button>
+        <button onClick={() => nextStep(1)}>
+          <FontAwesomeIcon icon="step-forward" />
+        </button>
       </div>
     </section>
   );
